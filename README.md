@@ -21,23 +21,25 @@ npm run build
 npm run build --report
 ```
 
-打包优化：
-index.html 使用cdn
+## 打包优化：
+```
+# index.html 使用cdn
 <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
 <script src="https://unpkg.com/flyio/dist/fly.min.js"></script>
 
-dll预打包
+# dll预打包
 生成vendor-manifest.json
 <script src="./static/js/vendor.dll.js"></script>
 
-router异步加载
+# router异步加载
 const HelloWorld = (resolve) => require(['@/components/HelloWorld'], resolve)
 
-使用fly替代axios，更小更轻便
+# 使用fly替代axios，更小更轻便
 
-正式环境建议
+# 正式环境建议
 productionSourceMap: false, 是否生成.map文件
 productionGzip: true, 是否启用压缩功能
 productionGzipExtensions: ['js', 'css'], 压缩的文件
+```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
